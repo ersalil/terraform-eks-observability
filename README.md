@@ -72,7 +72,7 @@ cd terraform-eks-observability
 aws configure
 ```
 
-### 3. Create S3 Bucket for Terraform Backend
+### 3. (Optional) Create S3 Bucket for Terraform Backend
 
 > Replace `<your-s3-bucket-name>` and `<your-region>` with actual values.
 
