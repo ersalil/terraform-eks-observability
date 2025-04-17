@@ -76,17 +76,19 @@ aws configure
 
 > Replace `<your-s3-bucket-name>` and `<your-region>` with actual values.
 
-```bash
-aws s3api create-bucket --bucket <your-s3-bucket-name> --region <your-region>
+By default, the S3 backend is disabled for ease of use. To enable it, uncomment the following lines in the `providers.tf` file and configure the S3 bucket:
+
+```hcl
+terraform {
+  backend "s3" {
+    bucket = "<your-s3-bucket-name>"
+    key    = "terraform.tfstate"
+    region = "<your-region>"
+  }
+}
 ```
 
-### 4. Initialize Terraform
-
-```bash
-terraform init
-```
-
-### 5. Update Terraform Variables
+### 6. Update Terraform Variables
 
 Update the following values in your `terraform.tfvars` or environment configuration:
 
@@ -103,6 +105,11 @@ DESTINATION_GMAIL_ID  = ""
 > - Please configure your own **source Gmail credentials** before moving to production.
 > - **Set `DESTINATION_GMAIL_ID` to your email** to receive alerts.
 
+### 5. Initialize Terraform
+
+```bash
+terraform init
+```
 
 ### 6. Deploy EKS Cluster
 
