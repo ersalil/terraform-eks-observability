@@ -37,22 +37,34 @@ Ensure you have the following tools installed:
 
 ```bash
 terraform-eks-observability/
+├── README.md
 ├── main.tf
 ├── providers.tf
+├── terraform.tfstate
 ├── terraform.tfvars
-├── alb-controller.tf
 ├── variable.tf
-└── modules/
-    ├── cluster/
-    ├── monitoring/
-    │   ├── helm_values/
-    │   │   ├── grafana_values.yaml
-    │   │   └── prom_values.yaml
-    └── dashboard/
-        ├── kube-metrics.json
-        ├── kube-metric.tf
-        ├── main.tf
-        └── variables.tf
+├── modules
+│   ├── cluster
+│   │   ├── access.tf
+│   │   ├── alb-controller.tf
+│   │   ├── data.tf
+│   │   ├── iam_policy.tf
+│   │   ├── outputs.tf
+│   │   ├── variables.tf
+│   │   └── vpc.tf
+│   ├── dashboard
+│   │   ├── kube-metric.tf
+│   │   ├── kube-metrics.json
+│   │   ├── main.tf
+│   │   ├── outputs.tf
+│   │   └── variables.tf
+│   └── monitoring
+│       ├── helm_values
+│       │   ├── grafana_values.yaml
+│       │   └── prom_values.yaml
+│       ├── monitoring.tf
+│       └── variables.tf
+└── terraform.tfstate
 ```
 
 ## 🚀 Getting Started
