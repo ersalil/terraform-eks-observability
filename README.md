@@ -135,4 +135,6 @@ terraform apply --target=module.dashboard
 > Username: `admin`  
 > Password: `admin`
 
+ℹ️ **Note:** At this stage, not all variables have been configured, including those for the EKS cluster name and other related settings. These variables will be properly defined and included in future commits to ensure a complete and customizable setup.
+
 
