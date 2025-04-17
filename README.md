@@ -100,7 +100,7 @@ terraform {
 }
 ```
 
-### 6. Update Terraform Variables
+### 4. Update Terraform Variables
 
 Update the following values in your `terraform.tfvars` or environment configuration:
 
