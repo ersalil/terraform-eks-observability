@@ -18,11 +18,11 @@ terraform {
     }
   }
 
-  backend "s3" {
-    bucket = "salil-terraform"
-    key    = "eks_prom_stack.tfstate"
-    region = "us-east-1"
-  }
+  # backend "s3" {
+  #   bucket = "salil-terraform"
+  #   key    = "eks_prom_stack.tfstate"
+  #   region = "us-east-1"
+  # }
 }
 
 provider "aws" {

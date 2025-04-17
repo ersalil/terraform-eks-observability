@@ -2,7 +2,7 @@ region = "us-east-2"
 
 SOURCE_GMAIL_ID = "testsalilapp@gmail.com"
 SOURCE_AUTH_PASSWORD = "myyk fuac jnfg fveo"
-DESTINATION_GMAIL_ID = ""
+DESTINATION_GMAIL_ID = "salil.hexa@gmail.com"
 
 /*
 NOTE: All values are **mandatory**; otherwise, the Alert Manager pod will crash.

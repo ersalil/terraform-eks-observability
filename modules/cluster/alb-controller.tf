@@ -1,5 +1,5 @@
 resource "helm_release" "aws_load_balancer_controller" {
-  depends_on = [module.cluster]
+  depends_on = [module.eks_managed_node_group]
   name       = "aws-load-balancer-controller"
   namespace  = "kube-system"
   chart      = "aws-load-balancer-controller"
@@ -7,12 +7,12 @@ resource "helm_release" "aws_load_balancer_controller" {
 
   set {
     name  = "clusterName"
-    value = module.cluster.cluster_name
+    value = module.eks.cluster_name
   }
 
   set {
     name  = "region"
-    value = "us-east-2"
+    value = var.region
   }
 
   set {
@@ -27,7 +27,7 @@ resource "helm_release" "aws_load_balancer_controller" {
 
   set {
     name  = "serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"
-    value = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:role/${module.cluster.alb_ingress_controller_role_name}"
+    value = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:role/${aws_iam_role.eks-alb-ingress-controller.name}"
   }
   
 }
