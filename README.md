@@ -114,19 +114,19 @@ terraform init
 ### 6. Deploy EKS Cluster
 
 ```bash
-terraform apply --target=module.cluster
+terraform apply -target=module.cluster
 ```
 
 ### 7. Deploy Monitoring Stack (Prometheus & Grafana)
 
 ```bash
-terraform apply --target=module.monitoring
+terraform apply -target=module.monitoring
 ```
 
 ### 8. Provision Grafana Dashboard
 
 ```bash
-terraform apply --target=module.dashboard
+terraform apply -target=module.dashboard
 ```
 
 > 📌 After the final step, Terraform will output the LoadBalancer URL to access Grafana.
