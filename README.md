@@ -88,13 +88,21 @@ terraform init
 
 ### 5. Update Terraform Variables
 
-Edit the `terraform.tfvars` file with your environment-specific values:
+Update the following values in your `terraform.tfvars` or environment configuration:
 
 ```hcl
-region       = "us-east-2"
-cluster_name = "eks-observability-cluster"
-...
+region                = "us-east-2"
+SOURCE_GMAIL_ID       = "testsalilapp@gmail.com"
+SOURCE_AUTH_PASSWORD  = "myyk fuac jnfg fveo"
+DESTINATION_GMAIL_ID  = ""
 ```
+
+> ⚠️ **NOTE:** All values are **mandatory** — if any are missing, the Alertmanager pod will crash.
+>
+> - A temporary **SOURCE Gmail ID** and **App Password** have been provided for your convenience.  
+> - Please configure your own **source Gmail credentials** before moving to production.
+> - **Set `DESTINATION_GMAIL_ID` to your email** to receive alerts.
+
 
 ### 6. Deploy EKS Cluster
 
