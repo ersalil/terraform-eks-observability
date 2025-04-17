@@ -40,8 +40,6 @@ terraform-eks-observability/
 ├── README.md
 ├── main.tf
 ├── providers.tf
-├── terraform.tfstate
-├── terraform.tfvars
 ├── variable.tf
 ├── modules
 │   ├── cluster
@@ -64,7 +62,7 @@ terraform-eks-observability/
 │       │   └── prom_values.yaml
 │       ├── monitoring.tf
 │       └── variables.tf
-└── terraform.tfstate
+└── terraform.tfvars
 ```
 
 ## 🚀 Getting Started
