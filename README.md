@@ -121,19 +121,34 @@ DESTINATION_GMAIL_ID  = ""
 terraform init
 ```
 
-### 6. Deploy EKS Cluster
+### 6. Recommended Terraform Commands for Best Practices
+
+To ensure a clean, consistent, and error-free setup, it's recommended to run the following Terraform commands during development:
+
+```bash
+# Format your Terraform code to follow standard conventions
+terraform fmt
+
+# Validate your configuration files for syntax and internal consistency
+terraform validate
+
+# Review the execution plan to see what changes will be made
+terraform plan
+```
+
+### 7. Deploy EKS Cluster
 
 ```bash
 terraform apply -target=module.cluster
 ```
 
-### 7. Deploy Monitoring Stack (Prometheus & Grafana)
+### 8. Deploy Monitoring Stack (Prometheus & Grafana)
 
 ```bash
 terraform apply -target=module.monitoring
 ```
 
-### 8. Provision Grafana Dashboard
+### 9. Provision Grafana Dashboard
 
 ```bash
 terraform apply -target=module.dashboard
