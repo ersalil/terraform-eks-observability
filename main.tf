@@ -6,12 +6,12 @@ module "cluster" {
 module "monitoring" {
   source = "./modules/monitoring"
 
-  SOURCE_GMAIL_ID = var.SOURCE_GMAIL_ID
+  SOURCE_GMAIL_ID      = var.SOURCE_GMAIL_ID
   SOURCE_AUTH_PASSWORD = var.SOURCE_AUTH_PASSWORD
   DESTINATION_GMAIL_ID = var.DESTINATION_GMAIL_ID
 
   providers = {
-    helm = helm
+    helm       = helm
     kubernetes = kubernetes
   }
 
